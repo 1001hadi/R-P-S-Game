@@ -1,0 +1,64 @@
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-image: url(img/clear.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.choice{
+    font-size: 1.4rem;
+}
+
+.logos {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-content: center;
+    margin: auto;
+
+}
+
+.btn {
+    max-width: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    justify-content: center;
+    margin: auto;
+    padding: 10px ;
+    cursor: pointer;
+}
+
+.choices {
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.choices:hover {
+    background-color: teal;
+    color: #fff;
+}
+
+.winer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 500px;
+    justify-content: center;
+    margin: auto;
+    font-size: 1.7rem;
+}
