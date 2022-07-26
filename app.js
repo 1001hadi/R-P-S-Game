@@ -1,32 +1,28 @@
-const yourChoice = document.querySelector("#your-choice");
+const userChoice = document.querySelector("#user-choice");
 const comChoice = document.querySelector("#computer-choice");
 const winerResult = document.querySelector("#result");
 const choices = document.querySelectorAll('.choices');
-const you = document.querySelector("#you");
+const user = document.querySelector("#user");
 const device = document.querySelector("#computer");
 
-let player;
-let computer;
-let result;
-
-let yourScore = 1;
-let computerScore= 1;
+let userScore = 0;
+let computerScore= 0;
 
 
 choices.forEach(button => button.addEventListener('click', (e) => {
-    player = button.textContent;
-    computerChoicesGenerator();
+    const userInput = button.textContent;
+    const computerInput = computerChoicesGenerator();
 
-    yourChoice.textContent = `You chosen: ${player}`;
-    comChoice.textContent = `Computer chosses: ${computer}`;
-    const matchResult = winerGenerator();
+    userChoice.textContent = `You chosen: ${userInput}`;
+    comChoice.textContent = `Computer chosses: ${computerInput}`;
+    const matchResult = winnerGenerator(userInput, computerInput);
 
-    if(matchResult === 'W') {
+    if(matchResult === 'win') {
         winerResult.textContent = 'You Win!';
-        you.textContent = "Your Score:" + yourScore ++;  
-    } else if (matchResult === 'L'){
+        user.textContent = "Your Score:" +  ++userScore;  
+    } else if (matchResult === 'lose'){
         winerResult.textContent = 'You Lose!';
-        device.textContent = "Computer Score: " + computerScore ++;
+        device.textContent = "Computer Score: " +  ++computerScore;
     } else{
         winerResult.textContent = 'Draw!';
     }
@@ -39,26 +35,37 @@ function computerChoicesGenerator() {
      
     switch(randNum) {
         case 1:
-          computer = 'Rock';
-          break;
+          return 'Rock';
         case 2:
-          computer = 'Paper';
-          break;
+          return 'Paper';
         case 3:
-          computer = 'Scissors';
-          break;
+          return 'Scissors';
     }
 };
 
 
-function winerGenerator() {
-    if(player === computer) {
-        return "D"
-    } else if(computer === 'Rock') {
-        return (player === "Paper")? "W" : "L" ;
-    } else if(computer === "Paper") {
-        return (player === "Scissors")? "W" : "L";
-    } else if(computer === "Scissors") {
-        return (player === "Rock")? "W" : "L";
-    }
+function winnerGenerator(userInput, computerInput) {
+    const gameState = [
+        {
+            selection: 'Rock',
+            'Rock': 'tie',
+            'Paper': 'lose',
+            'Scissors': 'win'
+        },
+        {
+            selection: 'Paper',
+            'Rock': 'win',
+            'Paper': 'tie',
+            'Scissors': 'lose'
+        },
+        {
+            selection: 'Scissors',
+            'Rock': 'lose',
+            'Paper': 'win',
+            'Scissors': 'tie'
+        }
+    ];
+
+    const state = gameState.find(({selection}) => selection === userInput);
+    return state[computerInput];
 };
