@@ -9,9 +9,9 @@ Try it here: https://1001hadi.github.io/R-P-S-Game/
 
 # summary
 
-Thi project has been written on JavaScript, HTML and Css.
+This project has been written on JavaScript, HTML and Css.
 I used Font Awesome for the logos on this app.
 
-By clicking on one of the Botton game users can start and it choice randomly for the device choices, it display the Winer And Loser or if it Draw. at last line it display the scores for each winer.
+By clicking on one of the logos users can start and the device chooses randomly for itself, it displays the Winner And Loser or if it Draw. At the last line it displays the scores for each winer.
 
 Author: Hadi Jafari
