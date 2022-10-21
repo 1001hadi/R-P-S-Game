@@ -1,4 +1,6 @@
-This Rock, Paper, Scissors game is my second Project on Master Mind program.
+# This Rock, Paper, Scissors game
+
+## This is my second Project on Master Mind program.
 
 I used HTML, CSS and JavaScript to beld it.
 I used Font Awesome for logos.
